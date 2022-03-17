@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "layout/variables";
+@import "layout/base";
+@import "layout/animations";
+@import "layout/theme";
+@import "layout/header";
+@import "layout/footer";
+@import "pages/home";

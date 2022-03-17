@@ -1,0 +1,33 @@
+.top-footer {
+    background-color: $dark-gray;
+    padding: 52px 0 47px;
+    h5 {
+        color: #efefef;
+    }
+}
+
+.bottom-footer {
+    background-color: #efefef;
+    padding: 29px 0 26px;
+    small {
+        color: #a5a5a5;
+        font-size: 12px;
+    }
+    .footer-menu {
+        color: #a5a5a5;
+        li {
+            a {
+                font-size: 12px;
+            }
+            &:after {
+                content: "/";
+                margin: 0 5px;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

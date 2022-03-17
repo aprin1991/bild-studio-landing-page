@@ -1,0 +1,130 @@
+.main-container {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.loading-container {
+    height: calc(100vh - 86px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+
+.spin::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 5px #cfd0d1;
+    border-bottom-color: #1c87c9;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+}
+
+.ripple-button {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    >.content {
+        position: relative;
+        z-index: 2;
+    }
+    >.ripple {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: #027232;
+        display: block;
+        content: "";
+        border-radius: 9999px;
+        opacity: 1;
+        animation: 0.8s linear 1 forwards ripple-effect;
+    }
+}
+
+.loading-dots {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 12px 0 #00000022, -12px 0 #fff;
+    animation: loading-dots 1s infinite linear alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-slider {
+    overflow: hidden;
+    .slick-slide {
+        margin: 0 10px;
+    }
+    /* the parent */
+    .slick-list {
+        max-height: 300px;
+        overflow: hidden;
+        margin: 0 -10px;
+        padding: 0;
+        .img-card {
+            transition: all ease 0.3s;
+            &:hover {
+                .copy-link {
+                    transform: scale(1) translate(-50%, -50%);
+                    left: 50%;
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+            .copy-link {
+                position: absolute;
+                left: 40%;
+                top: 40%;
+                width: 97px;
+                height: 97px;
+                background-color: $green;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                padding: 25px;
+                transform: scale(0.4) translate(-50%, -50%);
+                transition: all ease 0.4s;
+                transform-origin: 50% 50%;
+                opacity: 0;
+            }
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+    }
+    .max-slider-desc {
+        max-width: 648px;
+    }
+    .slider-arrow {
+        transition: all ease 0.4s;
+        filter: grayscale(100%);
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+}

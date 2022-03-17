@@ -1,0 +1,50 @@
+header {
+    .top-header {
+        padding: 31px 0;
+        border-bottom: 1px solid #dadada;
+        .header-social {
+            gap: 8px;
+            li {
+                a {
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    border: 4px solid #dadada;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all ease 0.4s;
+                    &:hover {
+                        border-color: var(--border);
+                        svg {
+                            filter: grayscale(0);
+                            opacity: 1;
+                        }
+                    }
+                    svg {
+                        padding: 3px;
+                        filter: grayscale(100%);
+                        opacity: 0.5;
+                        transition: all ease 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    .bottom-header {
+        padding: 31px 0;
+        gap: 39px;
+        li {
+            a {
+                font-size: 18px;
+                color: #737373;
+                transition: all ease 0.5s;
+                &:hover,
+                &.active {
+                    color: $green;
+                }
+            }
+        }
+    }
+}

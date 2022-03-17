@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Myriad";
+    src: url("./../../../public/assets/fonts/MyriadPro-Regular.eot");
+    src: url("./../../../public/assets/fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("./../../../public/assets/fonts/MyriadPro-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body,
+* {
+    box-sizing: border-box;
+    font-family: "Myriad", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    color: #737373;
+    background-color: #fefefe;
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+.text-secondary {
+    color: $secondary;
+}
+
+.modal {
+    z-index: 10000;
+}
