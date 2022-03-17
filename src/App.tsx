@@ -7,7 +7,10 @@ import { lazy, Suspense } from "react";
 import { Loading } from "components/loading";
 import { Footer, Header } from "components";
 import "react-toastify/dist/ReactToastify.css";
+import "./styles/aos.css";
 import Custom404 from "pages/404";
+const Home = lazy(() => import("./pages/home"));
+const About = lazy(() => import("./pages/about"));
 const contextClass = {
   success: "bg-green-800 text-white",
   error: "bg-red-600",
@@ -16,7 +19,6 @@ const contextClass = {
   default: "bg-indigo-600",
   dark: "bg-white-600 font-gray-300",
 };
-const Home = lazy(() => import("./pages/home"));
 function App(): JSX.Element {
   return (
     <Provider store={store}>
@@ -29,6 +31,14 @@ function App(): JSX.Element {
               element={
                 <Suspense fallback={<Loading />}>
                   <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <About />
                 </Suspense>
               }
             />

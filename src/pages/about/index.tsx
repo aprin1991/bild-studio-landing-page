@@ -1,28 +1,24 @@
+import PageTitle from "components/page-title";
 import React from "react";
-import About from "./components/About";
-import HeroHeader from "./components/HeroHeader";
-import ProjectsSlider from "./components/ProjectsSlider";
 import MetaTags from "react-meta-tags";
-const Home: React.FC = () => {
+function About() {
   return (
     <div>
       <MetaTags>
-        <title>Home</title>
+        <title>About</title>
         <meta name="description" content="Some description." />
         <link rel="canonical" href={`/`} />
-        <meta id="og-title" property="og:title" content="MyApp" />
+        <meta id="og-title" property="og:title" content="About" />
 
-        <meta itemProp="name" content={"Home Page"} />
+        <meta itemProp="name" content={"About Page"} />
 
         <meta property="og:description" content="Some description." />
         <meta name="twitter:title" content={"Twitter."} />
         <meta name="twitter:description" content={"Some description."} />
       </MetaTags>
-      <HeroHeader />
-      <About />
-      <ProjectsSlider />
+      <PageTitle title="About my business" />
     </div>
   );
-};
+}
 
-export default Home;
+export default About;

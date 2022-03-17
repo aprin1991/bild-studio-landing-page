@@ -1,14 +1,34 @@
 import Container from "components/container";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { socialIcons } from "utilities/icons";
 
 export const Header = () => {
+  const containerRef = useRef(null);
+  const [sticky, setSticky] = useState(false);
+  const { pathname } = useLocation();
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    setSticky(!entry?.isIntersecting);
+  };
+  const options = {
+    root: null,
+    threshold: 0.15,
+    rootMargin: `75px`,
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
+
   return (
-    <header>
+    <header ref={containerRef} className={`${sticky ? "is-sticky" : ""}`}>
       <Container>
         <div className="flex justify-between items-center top-header">
-          <Link to="/">
+          <Link to="/" className="logo">
             <img src="/assets/images/logo.png" alt="logo" />
           </Link>
           <ul className="header-social flex justify-start">
@@ -76,18 +96,33 @@ export const Header = () => {
         </div>
         <ul className="bottom-header flex justify-start">
           <li className="capitalize">
-            <Link to="/" className="active">
+            <Link to="/" className={`${pathname === "/" ? "active" : ""}`}>
               home
             </Link>
           </li>
           <li className="capitalize">
-            <Link to="/">about</Link>
+            <Link
+              to="/about"
+              className={`${pathname === "/about" ? "active" : ""}`}
+            >
+              about
+            </Link>
           </li>
           <li className="capitalize">
-            <Link to="/">work</Link>
+            <Link
+              to="/work"
+              className={`${pathname === "/work" ? "active" : ""}`}
+            >
+              work
+            </Link>
           </li>
           <li className="capitalize">
-            <Link to="/">contact</Link>
+            <Link
+              to="/contact"
+              className={`${pathname === "/contact" ? "active" : ""}`}
+            >
+              contact
+            </Link>
           </li>
         </ul>
       </Container>

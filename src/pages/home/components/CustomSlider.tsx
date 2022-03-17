@@ -1,64 +1,65 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import toast from "components/toast";
 import { arrowLeft, arrowRight, linkIcon } from "utilities/icons";
-const products = [
-  {
-    img: "/assets/images/mock/pr1.png",
-    title: "Dolore magna",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr2.png",
-    title: "Eget est lorem",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr3.png",
-    title: "Tempus imperdiet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr4.png",
-    title: "Mattis rhoncus",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr5.png",
-    title: "Odio ut enim",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr1.png",
-    title: "Dolore magna",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr2.png",
-    title: "Eget est lorem",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr3.png",
-    title: "Tempus imperdiet",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr4.png",
-    title: "Mattis rhoncus",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-  {
-    img: "/assets/images/mock/pr5.png",
-    title: "Odio ut enim",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-  },
-];
+import map from "lodash/map";
+// const products = [
+//   {
+//     img: "/assets/images/mock/pr1.png",
+//     title: "Dolore magna",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr2.png",
+//     title: "Eget est lorem",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr3.png",
+//     title: "Tempus imperdiet",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr4.png",
+//     title: "Mattis rhoncus",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr5.png",
+//     title: "Odio ut enim",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr1.png",
+//     title: "Dolore magna",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr2.png",
+//     title: "Eget est lorem",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr3.png",
+//     title: "Tempus imperdiet",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr4.png",
+//     title: "Mattis rhoncus",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+//   {
+//     img: "/assets/images/mock/pr5.png",
+//     title: "Odio ut enim",
+//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
+//   },
+// ];
 
-function CustomSlider() {
-  const [SliderInfo, setSliderInfo] = useState(products[0]);
+function CustomSlider({ products }) {
+  const [SliderInfo, setSliderInfo] = useState({ title: "", text: "" });
   const customSlider = useRef<Slider | null>(null);
   const config = {
     dots: false,
@@ -73,6 +74,12 @@ function CustomSlider() {
       setSliderInfo(products[newIndex]);
     },
   };
+  useEffect(() => {
+    if (products?.length) {
+      setSliderInfo(products[0]);
+    }
+  }, [products]);
+
   const nextSlider = () => {
     customSlider?.current?.slickNext();
   };
@@ -104,10 +111,10 @@ function CustomSlider() {
   return (
     <div className="custom-slider">
       <Slider {...config} ref={customSlider}>
-        {products.map((product, index) => {
+        {map(products, (product) => {
           return (
             <div
-              key={index}
+              key={product?.id}
               className="img-card relative"
               onMouseOver={handleImageHover}
               onMouseOut={handleImageBlur}

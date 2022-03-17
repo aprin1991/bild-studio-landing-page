@@ -1,4 +1,32 @@
 header {
+    &.is-sticky {
+        .logo {
+            width: 75px;
+            height: auto;
+            position: fixed;
+            right: 10rem;
+            top: 10px;
+            z-index: 10;
+            transition: all ease 0.3s;
+            animation: fadeInDown 0.3s ease-in-out;
+            z-index: 450;
+        }
+        .bottom-header {
+            width: 100%;
+            background: #fff;
+            position: fixed;
+            padding-bottom: 4px;
+            box-shadow: 0 2px 20px 0 rgb(0 0 0 / 8%) !important;
+            top: 0;
+            animation: fadeInDown 0.3s ease-in-out;
+            z-index: 222;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 10px 10rem;
+        }
+    }
     .top-header {
         padding: 31px 0;
         border-bottom: 1px solid #dadada;

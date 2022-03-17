@@ -1,0 +1,65 @@
+{
+    "projects": [{
+            "id": 1,
+            "img": "/assets/images/mock/pr1.png",
+            "title": "Dolore magna",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 2,
+            "img": "/assets/images/mock/pr2.png",
+            "title": "Eget est lorem",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 3,
+            "img": "/assets/images/mock/pr3.png",
+            "title": "Tempus imperdiet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 4,
+            "img": "/assets/images/mock/pr4.png",
+            "title": "Mattis rhoncus",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 5,
+            "img": "/assets/images/mock/pr5.png",
+            "title": "Odio ut enim",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 6,
+            "img": "/assets/images/mock/pr1.png",
+            "title": "Dolore magna",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 7,
+            "img": "/assets/images/mock/pr2.png",
+            "title": "Eget est lorem",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 8,
+            "img": "/assets/images/mock/pr3.png",
+            "title": "Tempus imperdiet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 9,
+            "img": "/assets/images/mock/pr4.png",
+            "title": "Mattis rhoncus",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 10,
+            "img": "/assets/images/mock/pr5.png",
+            "title": "Odio ut enim",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        }
+    ],
+    "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+    "profile": { "name": "typicode" }
+}

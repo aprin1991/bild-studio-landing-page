@@ -1,8 +1,27 @@
+import { Request, URLS } from "api";
 import Container from "components/container";
-import React from "react";
+import toast from "components/toast";
+import React, { useEffect, useState } from "react";
 import CustomSlider from "./CustomSlider";
+import SliderLoading from "./SliderLoading";
 
 function ProjectsSlider() {
+  const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState<any>([]);
+  useEffect(() => {
+    const getProjects = async () => {
+      setLoading(true);
+      try {
+        const response = await Request.get(URLS.Projects);
+        setProducts(response);
+      } catch (err) {
+        toast("error", "Fetch Error! Try again later");
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProjects();
+  }, []);
   return (
     <div className="py-14">
       <Container classes="text-center mb-10">
@@ -16,9 +35,15 @@ function ProjectsSlider() {
           tincidunt eros.
         </p>
       </Container>
-      <div>
-        <CustomSlider />
-      </div>
+      {products?.length > 0 ? (
+        <div>
+          {loading ? <SliderLoading /> : <CustomSlider products={products} />}
+        </div>
+      ) : (
+        <div className="flex justify-center items-center h-32 text-primary  text-lg">
+          No Data
+        </div>
+      )}
     </div>
   );
 }
