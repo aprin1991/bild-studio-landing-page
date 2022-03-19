@@ -1,4 +1,25 @@
 {
+    "categories": [{
+            "id": 1,
+            "title": "all"
+        },
+        {
+            "id": 2,
+            "title": "print"
+        },
+        {
+            "id": 3,
+            "title": "photography"
+        },
+        {
+            "id": 4,
+            "title": "web"
+        },
+        {
+            "id": 5,
+            "title": "applications"
+        }
+    ],
     "projects": [{
             "id": 1,
             "img": "/assets/images/mock/pr1.png",
@@ -60,6 +81,68 @@
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
         }
     ],
-    "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-    "profile": { "name": "typicode" }
+    "works": [{
+            "id": 1,
+            "img": "/assets/images/mock/pr1.png",
+            "title": "Dolore magna",
+            "categories": ["print", "web"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 2,
+            "img": "/assets/images/mock/pr2.png",
+            "title": "Eget est lorem",
+            "categories": ["print", "photography"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 3,
+            "img": "/assets/images/mock/pr3.png",
+            "title": "Tempus imperdiet",
+            "categories": ["web"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 4,
+            "img": "/assets/images/mock/pr4.png",
+            "title": "Mattis rhoncus",
+            "categories": ["print", "web"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 5,
+            "img": "/assets/images/mock/pr5.png",
+            "title": "Odio ut enim",
+            "categories": ["print", "web", "photography"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 6,
+            "img": "/assets/images/mock/pr6.png",
+            "title": "Odio ut enim",
+            "categories": [],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 7,
+            "img": "/assets/images/mock/pr7.png",
+            "title": "Odio ut enim",
+            "categories": [],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 8,
+            "img": "/assets/images/mock/pr8.png",
+            "title": "Odio ut enim",
+            "categories": ["print", "web", "photography"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        },
+        {
+            "id": 9,
+            "img": "/assets/images/mock/pr9.png",
+            "title": "Odio ut enim",
+            "categories": ["print", "web", "photography"],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis."
+        }
+    ]
 }

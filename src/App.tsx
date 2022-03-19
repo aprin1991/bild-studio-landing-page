@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
+const Work = lazy(() => import("./pages/work"));
 const contextClass = {
   success: "bg-green-800 text-white",
   error: "bg-red-600",
@@ -43,6 +44,14 @@ function App(): JSX.Element {
                   element={
                     <Suspense fallback={<Loading />}>
                       <About />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/work"
+                  element={
+                    <Suspense fallback={<Loading />}>
+                      <Work />
                     </Suspense>
                   }
                 />

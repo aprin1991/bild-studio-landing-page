@@ -1,0 +1,38 @@
+.top-categories {
+    margin: 50px 0;
+    .categories-list {
+        li {
+            font-size: 18px;
+            cursor: pointer;
+            transition: all ease 0.6s;
+            &.active {
+                color: $green;
+            }
+            &:after {
+                content: "/";
+                margin: 0 10px;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.display-types {
+    span {
+        filter: grayscale(100%);
+        cursor: pointer;
+        transition: all ease 0.4s;
+        &.active {
+            filter: grayscale(0);
+        }
+    }
+}
+
+.works-container {
+    min-height: 50vh;
+    margin-bottom: 50px;
+}

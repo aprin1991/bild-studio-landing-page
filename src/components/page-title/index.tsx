@@ -6,7 +6,7 @@ const PageTitle: React.FC<IProps> = ({ title }) => {
   return (
     <div className="bg-green">
       <Container>
-        <h1 className="py-7 uppercase text-white text-2xl font-bold novecento">
+        <h1 className="py-7 uppercase text-white text-2xl font-bold novecento page-title">
           {title}
         </h1>
       </Container>
