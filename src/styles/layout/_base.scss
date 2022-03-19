@@ -7,6 +7,18 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "novecento";
+    src: url("./../../../public/assets/fonts/novecento.eot");
+    src: url("./../../../public/assets/fonts/novecento.eot?#iefix") format("embedded-opentype"), url("./../../../public/assets/fonts/novecento.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("./../../../public/assets/fonts/helvetica.eot");
+    src: url("./../../../public/assets/fonts/helvetica.eot?#iefix") format("embedded-opentype"), url("./../../../public/assets/fonts/helvetica.woff2") format("woff2");
+}
+
 html,
 body,
 * {
@@ -18,6 +30,11 @@ body,
 body {
     color: #737373;
     background-color: #fefefe;
+}
+
+* {
+    font-size: inherit;
+    font-family: inherit;
 }
 
 .bg-green {

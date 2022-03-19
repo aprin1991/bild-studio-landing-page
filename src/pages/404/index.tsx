@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Custom404() {
   return (
-    <div className="h-64 flex justify-center items-center flex-col">
+    <div className="h-64 flexBox flex-col">
       <div className="font-bold text-slate-800 text-center mb-4">
         Sorry We Can't Find It.
       </div>

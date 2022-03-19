@@ -46,7 +46,7 @@ function HeroHeader() {
                 className="absolute right-32 bottom-0"
               />
               <img
-                data-aos="flip-right"
+                data-aos="fade-left"
                 data-aos-duration={600}
                 data-aos-delay={800}
                 src="/assets/images/phone.png"
@@ -69,7 +69,7 @@ function HeroHeader() {
                 className="mt-7"
                 data-aos="fade-up"
                 data-aos-duration={600}
-                data-aos-delay={1600}
+                data-aos-delay={1400}
               >
                 <RippleButton
                   classes={`btn text-white hero-btn bg-green bg-indigo-500 block mx-auto px-6 py-2 text-white `}

@@ -1,0 +1,86 @@
+.about-container {
+    margin-top: 50px;
+    .top-about {
+        margin-bottom: 50px;
+    }
+}
+
+.services-tab-container {
+    background-color: #efefef;
+    .services-tab {
+        li {
+            padding: 49px 0 53px;
+            font-size: 18px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all ease 0.4s;
+            &.active {
+                background-color: #dadada;
+                >div {
+                    svg {
+                        opacity: 1;
+                        filter: grayscale(100%);
+                    }
+                }
+                >span {
+                    color: #423e3e;
+                    opacity: 1;
+                }
+            }
+            >div {
+                transition: inherit;
+                width: 58px;
+                height: 58px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                svg {
+                    transition: inherit;
+                    opacity: 0.5;
+                    filter: grayscale(100%);
+                }
+            }
+            >span {
+                transition: inherit;
+                color: #737373;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.tab-container {
+    padding: 41px 0 48px;
+    color: #8a8888;
+    font-size: 14px;
+    h6 {
+        color: #737373;
+        font-family: "novecento";
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+    ul {
+        margin-top: 28px;
+        padding-left: 18px;
+        li {
+            line-height: 25px;
+            &:before {
+                content: ">";
+                width: 7px;
+                height: 10px;
+                margin-right: 10px;
+                font-weight: bold;
+                font-family: "novecento";
+                font-size: 16px;
+                position: relative;
+                top: 3px;
+            }
+        }
+    }
+}
+
+.application-icon {
+    fill-rule: evenodd;
+}

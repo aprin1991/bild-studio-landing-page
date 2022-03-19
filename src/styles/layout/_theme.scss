@@ -1,7 +1,8 @@
 .main-container {
-    width: 960px;
+    max-width: 960px;
     margin-right: auto;
     margin-left: auto;
+    padding: 0 10px;
 }
 
 .loading-container {
@@ -131,4 +132,16 @@
 
 main {
     min-height: 75vh;
+}
+
+.flexBox {
+    @apply flex justify-center items-center;
+}
+
+.novecento {
+    font-family: "novecento";
+}
+
+.helvetica {
+    font-family: "helvetica";
 }

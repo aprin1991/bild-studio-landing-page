@@ -16,7 +16,7 @@ const About = () => {
     <div className="home-about">
       <Container classes="flex gap-5">
         <div className="w-5/12 pl-2">
-          <div className="w-full h-60 home-about-video flex justify-center items-center">
+          <div className="w-full h-60 home-about-video flexBox">
             <span className="cursor-pointer" onClick={() => setShowModal(true)}>
               {playIcon}
             </span>

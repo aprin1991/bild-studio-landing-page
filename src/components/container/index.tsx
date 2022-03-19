@@ -4,7 +4,7 @@ type IProps = {
   classes?: string;
 };
 const Container: React.FC<IProps> = ({ children, classes = "" }) => {
-  return <div className={`main-container ${classes}`}>{children}</div>;
+  return <div className={`main-container  ${classes}`}>{children}</div>;
 };
 
 export default Container;

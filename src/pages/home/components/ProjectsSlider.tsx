@@ -40,9 +40,7 @@ function ProjectsSlider() {
           {loading ? <SliderLoading /> : <CustomSlider products={products} />}
         </div>
       ) : (
-        <div className="flex justify-center items-center h-32 text-primary  text-lg">
-          No Data
-        </div>
+        <div className="flexBox h-32 text-primary  text-lg">No Data</div>
       )}
     </div>
   );
