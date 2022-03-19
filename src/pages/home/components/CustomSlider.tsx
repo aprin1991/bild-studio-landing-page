@@ -5,58 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import toast from "components/toast";
 import { arrowLeft, arrowRight, linkIcon } from "utilities/icons";
 import map from "lodash/map";
-// const products = [
-//   {
-//     img: "/assets/images/mock/pr1.png",
-//     title: "Dolore magna",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr2.png",
-//     title: "Eget est lorem",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr3.png",
-//     title: "Tempus imperdiet",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr4.png",
-//     title: "Mattis rhoncus",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr5.png",
-//     title: "Odio ut enim",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr1.png",
-//     title: "Dolore magna",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr2.png",
-//     title: "Eget est lorem",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr3.png",
-//     title: "Tempus imperdiet",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr4.png",
-//     title: "Mattis rhoncus",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-//   {
-//     img: "/assets/images/mock/pr5.png",
-//     title: "Odio ut enim",
-//     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.",
-//   },
-// ];
 
 function CustomSlider({ products }) {
   const [SliderInfo, setSliderInfo] = useState({ title: "", text: "" });
