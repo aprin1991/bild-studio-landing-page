@@ -1,7 +1,6 @@
 import Container from "components/container";
 import PageTitle from "components/page-title";
 import AnimatedPage from "components/page-transition/AnimatedPage";
-import React from "react";
 import MetaTags from "react-meta-tags";
 import Services from "./components/Services";
 const About = () => {
@@ -11,11 +10,9 @@ const About = () => {
         <MetaTags>
           <title>About</title>
           <meta name="description" content="Some description." />
-          <link rel="canonical" href={`/`} />
+          <link rel="canonical" href={`/about`} />
           <meta id="og-title" property="og:title" content="About" />
-
           <meta itemProp="name" content={"About Page"} />
-
           <meta property="og:description" content="Some description." />
           <meta name="twitter:title" content={"Twitter."} />
           <meta name="twitter:description" content={"Some description."} />
@@ -34,7 +31,7 @@ const About = () => {
                 height={260}
               />
             </div>
-            <div className="w-7/12 px-2 text-secondary text-sm">
+            <div className="w-7/12 text-secondary text-sm">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque eu erat lacus, vel congue mauris. Fusce velit
@@ -59,7 +56,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 gap-5 px-2 text-secondary text-sm mb-12">
             <div className="">
-              <h3 className="capitalize novecento text-2xl  mb-6">
+              <h3 className="capitalize novecento text-2xl  mb-4">
                 Mission Statement
               </h3>
               <p className="text-sm">
@@ -73,7 +70,7 @@ const About = () => {
               </p>
             </div>
             <div className="px-2">
-              <h3 className="capitalize novecento text-2xl  mb-6">Fun FActs</h3>
+              <h3 className="capitalize novecento text-2xl  mb-4">Fun FActs</h3>
               <p className="text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque eu erat lacus, vel congue mauris. Fusce velit

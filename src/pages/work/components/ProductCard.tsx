@@ -22,7 +22,7 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
       className="product-card relative"
     >
       <img
-        className="w-full h-56 object-cover"
+        className="w-full h-32 md:h-56 object-cover"
         src={product.img}
         alt={product.title}
         loading="lazy"

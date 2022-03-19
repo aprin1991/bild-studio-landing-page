@@ -46,7 +46,7 @@ const Services = () => {
 
   return (
     <div>
-      <Container classes="mb-8">
+      <Container classes="mb-5">
         <h4 className="uppercase text-secondary novecento text-2xl ">
           Services
         </h4>
@@ -70,14 +70,16 @@ const Services = () => {
               );
             })}
           </ul>
-          <div className="tab-container overflow-hidden">
-            {selectedTab === "Websites" && <ServiceTab html={html1} />}
-            {selectedTab === "Photography" && <ServiceTab html={html2} />}
-            {selectedTab === "SEO" && <ServiceTab html={html3} />}
-            {selectedTab === "Applications" && <ServiceTab html={html4} />}
-          </div>
         </Container>
       </div>
+      <Container>
+        <div className="tab-container overflow-hidden">
+          {selectedTab === "Websites" && <ServiceTab html={html1} />}
+          {selectedTab === "Photography" && <ServiceTab html={html2} />}
+          {selectedTab === "SEO" && <ServiceTab html={html3} />}
+          {selectedTab === "Applications" && <ServiceTab html={html4} />}
+        </div>
+      </Container>
     </div>
   );
 };

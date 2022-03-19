@@ -1,5 +1,4 @@
 import { Request, URLS } from "api";
-import { AxiosResponse } from "axios";
 import Container from "components/container";
 import PageTitle from "components/page-title";
 import AnimatedPage from "components/page-transition/AnimatedPage";
@@ -8,38 +7,23 @@ import map from "lodash/map";
 import { useEffect, useState } from "react";
 import { grid, horizontal } from "utilities/icons";
 import Filters from "./components/Filters";
-import { CategoriesType, ProductProp } from "./types";
-import { AnimatePresence, motion } from "framer-motion";
-import ProductCard from "./components/ProductCard";
+
+import { motion } from "framer-motion";
 import WorksLoading from "./components/WorksLoading";
+import MetaTags from "react-meta-tags";
+import InfiniteScrollProducts from "./components/InfiniteScrollProducts";
+import filter from "lodash/filter";
 const Work = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [display, setDisplay] = useState("grid");
-  const [loading, setLoading] = useState(false);
-  const [products, setProducts] = useState<
-    AxiosResponse | undefined | Array<ProductProp>
-  >([]);
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState<any>([]);
   const [filtered, setFiltered] = useState<any>([]);
-  const [categories, setCategories] = useState<
-    AxiosResponse | undefined | Array<CategoriesType>
-  >([]);
+  const [categories, setCategories] = useState<any>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [hasNext, setHasNext] = useState(true);
+  const [pageSize, setPageSize] = useState(9);
   useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      try {
-        const responseProducts = await Request.get(URLS.Works);
-        if (responseProducts) {
-          setProducts(responseProducts);
-          setFiltered(responseProducts);
-        }
-      } catch (err) {
-        toast("error", "Error!");
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      }
-    };
     const getCategories = async () => {
       try {
         const response = await Request.get(URLS.Categories);
@@ -49,11 +33,55 @@ const Work = () => {
       }
     };
     getCategories();
-    getProducts();
   }, []);
-
+  useEffect(() => {
+    if (selectedCategory === "all") {
+      return;
+    }
+    const filtered = filter(products, (el) => {
+      return el.categories.includes(selectedCategory);
+    });
+    setFiltered(filtered);
+  }, [products]);
+  const getProducts = async () => {
+    try {
+      const responseProducts: any = await Request.get(
+        URLS.Works(currentPage, pageSize)
+      );
+      if (responseProducts) {
+        if (responseProducts?.length > 0) {
+          setProducts(products.concat(responseProducts));
+          setFiltered(filtered.concat(responseProducts));
+        } else {
+          setHasNext(false);
+        }
+      }
+    } catch (err) {
+      toast("error", "Error!");
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  };
+  const handleFetchData = () => {
+    setCurrentPage((prev) => prev + 1);
+  };
+  useEffect(() => {
+    getProducts();
+  }, [currentPage]);
   return (
     <>
+      <MetaTags>
+        <title>Work</title>
+        <meta name="description" content="Some work description." />
+        <link rel="canonical" href={`/work`} />
+        <meta id="og-title" property="og:title" content="work" />
+        <meta itemProp="name" content={"Work Page"} />
+        <meta property="og:description" content="Some work description." />
+        <meta name="twitter:title" content={"Twitter."} />
+        <meta name="twitter:description" content={"Some work description."} />
+      </MetaTags>
       <AnimatedPage>
         <div>
           <PageTitle title="Check Out What I can Do" />
@@ -84,29 +112,29 @@ const Work = () => {
               </div>
             </Container>
           </div>
-          <Container classes="works-container">
-            {filtered.length > 0 ? (
+          <Container classes="">
+            {loading && (
               <motion.div
                 layout
-                className={`popular-movies grid ${
+                className={`grid ${
                   display === "grid"
                     ? "grid-cols-2 lg:grid-cols-3"
                     : "grid-cols-1"
                 } gap-4`}
               >
-                {loading ? (
-                  <WorksLoading />
-                ) : (
-                  <AnimatePresence>
-                    {map(filtered, (product) => (
-                      <ProductCard key={product?.id} product={product} />
-                    ))}
-                  </AnimatePresence>
-                )}
+                <WorksLoading />
               </motion.div>
+            )}
+            {filtered.length > 0 ? (
+              <InfiniteScrollProducts
+                products={filtered}
+                loadMoreDate={handleFetchData}
+                hasNext={hasNext}
+                display={display}
+              />
             ) : (
               <div className="w-full h-64 text-secondary flexBox text-lg font-bold novecento">
-                No Data
+                No Results.
               </div>
             )}
           </Container>
