@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header ref={containerRef} className={`${sticky ? "is-sticky" : ""}`}>
       <Container>
-        <div className="flex justify-between items-center top-header">
+        <div className="flex flex-col justify-start sm:justify-between sm:flex-row items-start sm:items-center top-header">
           <Link to="/" className="logo">
             <img src="/assets/images/logo.png" alt="logo" />
           </Link>
@@ -95,12 +95,12 @@ export const Header = () => {
           </ul>
         </div>
         <ul className="bottom-header flex justify-start">
-          <li className="capitalize">
+          <li className="uppercase">
             <Link to="/" className={`${pathname === "/" ? "active" : ""}`}>
               home
             </Link>
           </li>
-          <li className="capitalize">
+          <li className="uppercase">
             <Link
               to="/about"
               className={`${pathname === "/about" ? "active" : ""}`}
@@ -108,7 +108,7 @@ export const Header = () => {
               about
             </Link>
           </li>
-          <li className="capitalize">
+          <li className="uppercase">
             <Link
               to="/work"
               className={`${pathname === "/work" ? "active" : ""}`}
@@ -116,7 +116,7 @@ export const Header = () => {
               work
             </Link>
           </li>
-          <li className="capitalize">
+          <li className="uppercase">
             <Link
               to="/contact"
               className={`${pathname === "/contact" ? "active" : ""}`}

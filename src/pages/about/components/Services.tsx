@@ -1,5 +1,5 @@
 import Container from "components/container";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import map from "lodash/map";
 import {
   applicationIcon,
@@ -38,7 +38,7 @@ const html3 =
   "<h6>Tab3</h6><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit tab3. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros. Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p><ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li></ul>";
 const html4 =
   "<h6>Tab4</h6><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit tab4. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros. Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p><ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li></ul>";
-const Services = () => {
+const Services: FC = () => {
   const [selectedTab, setSelectedTab] = useState("Websites");
   const handleChangeTab = (type: string) => {
     setSelectedTab(type);
@@ -65,7 +65,9 @@ const Services = () => {
                   onClick={() => handleChangeTab(el.title)}
                 >
                   <div>{el.icon}</div>
-                  <span>{el.title}</span>
+                  <span className="truncate w-full text-center">
+                    {el.title}
+                  </span>
                 </li>
               );
             })}

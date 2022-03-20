@@ -19,6 +19,15 @@
             }
         }
     }
+    @include breakpoint(sm, max) {
+        .categories-list {
+            justify-content: flex-start;
+            align-items: flex-start;
+            li {
+                font-size: 13px;
+            }
+        }
+    }
 }
 
 .display-types {
@@ -35,6 +44,11 @@
 .works-container {
     min-height: 50vh;
     margin-bottom: 50px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .product-card {

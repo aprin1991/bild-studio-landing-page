@@ -9,4 +9,11 @@ type ProductProp = {
   img: string;
   text: string;
 };
-export type { CategoriesType, ProductProp };
+
+type InfinitScrollProps = {
+  products: Array<ProductProp>;
+  loadMoreDate: Function;
+  hasNext: boolean;
+  display: string;
+};
+export type { CategoriesType, ProductProp, InfinitScrollProps };

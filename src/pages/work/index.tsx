@@ -3,8 +3,7 @@ import Container from "components/container";
 import PageTitle from "components/page-title";
 import AnimatedPage from "components/page-transition/AnimatedPage";
 import toast from "components/toast";
-import map from "lodash/map";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { grid, horizontal } from "utilities/icons";
 import Filters from "./components/Filters";
 
@@ -13,7 +12,7 @@ import WorksLoading from "./components/WorksLoading";
 import MetaTags from "react-meta-tags";
 import InfiniteScrollProducts from "./components/InfiniteScrollProducts";
 import filter from "lodash/filter";
-const Work = () => {
+const Work: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [display, setDisplay] = useState("grid");
   const [loading, setLoading] = useState(true);
@@ -22,7 +21,7 @@ const Work = () => {
   const [categories, setCategories] = useState<any>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [hasNext, setHasNext] = useState(true);
-  const [pageSize, setPageSize] = useState(9);
+  const [pageSize] = useState(9);
   useEffect(() => {
     const getCategories = async () => {
       try {

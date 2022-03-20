@@ -1,11 +1,11 @@
 import { Request, URLS } from "api";
 import Container from "components/container";
 import toast from "components/toast";
-import React, { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import CustomSlider from "./CustomSlider";
 import SliderLoading from "./SliderLoading";
 
-function ProjectsSlider() {
+const ProjectsSlider: FC = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState<any>([]);
   useEffect(() => {
@@ -25,10 +25,10 @@ function ProjectsSlider() {
   return (
     <div className="py-14">
       <Container classes="text-center mb-10">
-        <h3 className="text-secondary text-xl mb-3">
+        <h3 className="text-secondary text-xl mb-3  tracking-wide uppercase">
           A Couple of Our Featured Projects
         </h3>
-        <p className="text-secondary text-sm px-20">
+        <p className="text-secondary text-sm px-8 md:px-20">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu
           sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis
@@ -44,6 +44,6 @@ function ProjectsSlider() {
       )}
     </div>
   );
-}
+};
 
 export default ProjectsSlider;

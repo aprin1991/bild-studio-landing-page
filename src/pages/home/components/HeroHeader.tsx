@@ -1,15 +1,10 @@
 import { RippleButton } from "components";
 import Container from "components/container";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { AnimatePresence } from "framer-motion";
+import { FC, useEffect } from "react";
 import Aos from "aos";
 
-function HeroHeader() {
-  const { ref, inView } = useInView({
-    threshold: 0.4,
-    triggerOnce: true,
-  });
+const HeroHeader: FC = () => {
   useEffect(() => {
     Aos.init({
       easing: "ease-out-cubic",
@@ -28,14 +23,14 @@ function HeroHeader() {
       </div>
       <Container classes="flex justify-start items-start">
         <AnimatePresence>
-          <figure className="relative w-full" ref={ref}>
+          <figure className="relative w-full">
             <div className="relative">
               <img
                 data-aos-duration={600}
                 data-aos="fade-up"
                 src="/assets/images/mac.png"
                 alt=""
-                className="relative bottom-0 left-8"
+                className="relative bottom-0 left-8 mac"
               />
               <img
                 data-aos="flip-right"
@@ -43,7 +38,7 @@ function HeroHeader() {
                 src="/assets/images/ipad.png"
                 data-aos-delay={400}
                 alt=""
-                className="absolute right-32 bottom-0"
+                className="absolute right-32 bottom-0 ipad"
               />
               <img
                 data-aos="fade-left"
@@ -51,10 +46,10 @@ function HeroHeader() {
                 data-aos-delay={800}
                 src="/assets/images/phone.png"
                 alt=""
-                className="absolute bottom-0 right-20"
+                className="absolute bottom-0 right-20 ipod"
               />
             </div>
-            <figcaption className="px-24 flex flex-col mt-14 text-base">
+            <figcaption className="px-4 md:px-24 flex flex-col mt-14 text-base">
               <p
                 className="text-center hero-text"
                 data-aos="fade-up"
@@ -83,6 +78,6 @@ function HeroHeader() {
       </Container>
     </div>
   );
-}
+};
 
 export default HeroHeader;

@@ -26,6 +26,14 @@ header {
             top: 0;
             padding: 10px 10rem;
         }
+        @include breakpoint(xs, max) {
+            .logo {
+                right: 10px;
+            }
+            .bottom-header {
+                padding: 10px;
+            }
+        }
     }
     .top-header {
         padding: 31px 0;
@@ -73,6 +81,18 @@ header {
                     color: $green;
                 }
             }
+        }
+    }
+    @include breakpoint(xs, max) {
+        .top-header {
+            padding: 10px 0;
+        }
+        .bottom-header {
+            gap: 15px;
+            padding: 10px 0;
+        }
+        .logo {
+            margin-bottom: 10px;
         }
     }
 }

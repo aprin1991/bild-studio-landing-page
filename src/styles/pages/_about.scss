@@ -49,6 +49,27 @@
             }
         }
     }
+    @include breakpoint(xs, max) {
+        .services-tab {
+            li {
+                padding: 10px 0;
+                >div {
+                    width: 36px;
+                    height: 36px;
+                }
+                span {
+                    display: none;
+                    font-size: 11px;
+                    text-transform: lowercase;
+                }
+                &.active {
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .tab-container {

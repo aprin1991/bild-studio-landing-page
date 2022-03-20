@@ -1,12 +1,18 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import toast from "components/toast";
 import { arrowLeft, arrowRight, linkIcon } from "utilities/icons";
 import map from "lodash/map";
-
-function CustomSlider({ products }) {
+type IProps = {
+  products: Array<{
+    title: string;
+    text: string;
+    img: string;
+  }>;
+};
+const CustomSlider: FC<IProps> = ({ products }) => {
   const [SliderInfo, setSliderInfo] = useState({ title: "", text: "" });
   const customSlider = useRef<Slider | null>(null);
   const config = {
@@ -17,6 +23,23 @@ function CustomSlider({ products }) {
     slidesToScroll: 1,
     centerMode: true, // enable center mode
     centerPadding: "50px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {},
+      },
+      {
+        breakpoint: 600,
+        settings: {},
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
     pauseOnHover: true,
     beforeChange: (_, newIndex) => {
       setSliderInfo(products[newIndex]);
@@ -79,19 +102,27 @@ function CustomSlider({ products }) {
         })}
       </Slider>
       <div className="flex justify-between items-center max-slider-desc mx-auto mt-14">
-        <span onClick={nextSlider} className="cursor-pointer slider-arrow">
+        <span
+          onClick={nextSlider}
+          className="cursor-pointer slider-arrow next-arrow"
+        >
           {arrowLeft}
         </span>
-        <div className="text-center px-16">
-          <h6 className="text-lg text-secondary">{SliderInfo?.title}</h6>
+        <div className="text-center px-4 md:px-16">
+          <h6 className="text-lg text-secondary uppercase">
+            {SliderInfo?.title}
+          </h6>
           <p className="text-sm text-secondary">{SliderInfo?.text}</p>
         </div>
-        <span onClick={prevSlider} className="cursor-pointer slider-arrow">
+        <span
+          onClick={prevSlider}
+          className="cursor-pointer slider-arrow prev-arrow"
+        >
           {arrowRight}
         </span>
       </div>
     </div>
   );
-}
+};
 
 export default CustomSlider;

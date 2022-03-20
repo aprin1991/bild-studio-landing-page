@@ -1,9 +1,9 @@
-import React from "react";
+import { FC } from "react";
 import map from "lodash/map";
-function SliderLoading() {
+const SliderLoading: FC = () => {
   return (
     <>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-3 lg:grid-cols-5 gap-4">
         {map(new Array(5), (el, index) => {
           return (
             <div key={index} className="animate-pulse">
@@ -22,6 +22,6 @@ function SliderLoading() {
       </div>
     </>
   );
-}
+};
 
 export default SliderLoading;

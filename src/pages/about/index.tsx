@@ -1,9 +1,10 @@
 import Container from "components/container";
 import PageTitle from "components/page-title";
 import AnimatedPage from "components/page-transition/AnimatedPage";
+import { FC } from "react";
 import MetaTags from "react-meta-tags";
 import Services from "./components/Services";
-const About = () => {
+const About: FC = () => {
   return (
     <AnimatedPage>
       <div>
@@ -20,8 +21,8 @@ const About = () => {
 
         <PageTitle title="About my business" />
         <Container classes="about-container">
-          <div className="flex gap-5 top-about">
-            <div className="w-5/12">
+          <div className="flex flex-col md:flex-row gap-5 top-about">
+            <div className="w-full md:w-5/12">
               <img
                 className="w-full h-auto"
                 src="/assets/images/about.png"
@@ -31,7 +32,7 @@ const About = () => {
                 height={260}
               />
             </div>
-            <div className="w-7/12 text-secondary text-sm">
+            <div className="w-full md:w-7/12 text-secondary text-sm">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque eu erat lacus, vel congue mauris. Fusce velit
@@ -54,7 +55,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-5 px-2 text-secondary text-sm mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-2 text-secondary text-sm mb-12">
             <div className="">
               <h3 className="capitalize novecento text-2xl  mb-4">
                 Mission Statement

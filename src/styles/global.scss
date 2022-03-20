@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "layout/variables";
 @import "layout/base";
+@import "layout/mixins";
 @import "layout/animations";
 @import "layout/theme";
 @import "layout/header";
@@ -10,3 +11,4 @@
 @import "pages/home";
 @import "pages/about";
 @import "pages/work";
+@import "pages/contact";
