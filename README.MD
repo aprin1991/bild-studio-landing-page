@@ -9,7 +9,7 @@
     npm install
 ```
 
-### Running server.
+### Running Json Server.
 
 ```bash
     npm run server
