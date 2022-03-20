@@ -1,13 +1,19 @@
 # bild-studio
 
 
-This project was generated with [superplate](https://github.com/pankod/superplate).
-
-## Getting Started
-
-superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
-
 ## Available Scripts
+
+### Install Packages.
+
+```bash
+    npm install
+```
+
+### Running server.
+
+```bash
+    npm run server
+```
 
 ### Running the development server.
 
@@ -27,61 +33,12 @@ superplate is a Next.js all-in-one project generator. Create your project with t
     npm run start
 ```
 
-## Learn More
-
-To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
-
-
-### **TailwindCSS**
-
-A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
-
-[Go To Documentation](https://tailwindcss.com/docs)
-
-
-### **SASS/SCSS**
-
-Sass is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax.
-
-[Go To Documentation](https://sass-lang.com/documentation)
-
-
-### **Axios**
-
-Promise based HTTP client for the browser and node.js.
-
-[Go To Documentation](https://github.com/axios/axios)
-
-
-### **React Redux**
-
-Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
-
-[Go To Documentation](https://redux.js.org/introduction/getting-started)
-
-
-### **eslint**
+## Technologies:
+![](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=007acc&style=flat-square&color=61DBFB)
+![](https://img.shields.io/badge/-TypeScript-61DAFB?logo=typescript&logoColor=white&style=flat-square&color=007acc)
+![](https://img.shields.io/badge/-Axios-000000?logo=axios&logoColor=007acc&style=flat-square&color=f7df1e)
+![](https://img.shields.io/badge/-TailwindCSS-61DAFB?logo=tailwind&logoColor=white&style=flat-square&color=007acc)
+![](https://img.shields.io/badge/-sass-61DAFB?logo=sass&logoColor=cf649a&style=flat-square&color=fff)
 
 
 
-[Go To Documentation]()
-
-
-### **jest**
-
-
-
-[Go To Documentation]()
-
-
-### **Github Actions**
-
-GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.
-
-[Go To Documentation](https://docs.github.com/en/actions)
-
-
-
-## License
-
-MIT
