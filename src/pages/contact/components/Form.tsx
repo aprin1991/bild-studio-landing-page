@@ -1,8 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { motion, useAnimation, transform } from "framer-motion";
 import { SITE_KEY } from "utilities/config";
-import { motion } from "framer-motion";
 import { Request, URLS } from "api";
 import { RippleButton } from "components";
 import { checkedIcon } from "utilities/icons";
@@ -10,13 +9,32 @@ import { checkedIcon } from "utilities/icons";
 const Form: FC = () => {
   const [loading, setLoading] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const controls = useAnimation();
   const {
     formState: { errors },
     handleSubmit,
     register,
     reset,
+    watch,
+    getValues,
   } = useForm();
+  const messageLength = watch("message", false)?.length ?? 0;
+  const charactersRemaining = 1000 - messageLength;
+  const mapRemainingToColor = transform([2, 6], ["#ff008c", "#ccc"]);
+  const mapRemainingToSpringVelocity = transform([0, 5], [50, 0]);
+  useEffect(() => {
+    if (charactersRemaining > 6) return;
 
+    controls.start({
+      scale: 1,
+      transition: {
+        type: "spring",
+        velocity: mapRemainingToSpringVelocity(charactersRemaining),
+        stiffness: 700,
+        damping: 80,
+      },
+    });
+  }, [messageLength]);
   useEffect(() => {
     const loadScriptByURL = (id, url, callback) => {
       const isScriptExist = document.getElementById(id);
@@ -144,12 +162,27 @@ const Form: FC = () => {
                 {...register("subject")}
               />
             </div>
-            <div>
+            <div className="relative">
+              <motion.span
+                animate={controls}
+                className="absolute z-30 text-sm"
+                style={{
+                  right: 15,
+                  bottom: 0,
+                  fontSize: "11px",
+                  color: mapRemainingToColor(charactersRemaining),
+                }}
+              >
+                {charactersRemaining ?? 0} / {1000}
+              </motion.span>
               <textarea
                 placeholder="Message"
                 {...register("message", {
                   required: "please enter your Message",
-                  maxLength: 1000,
+                  maxLength: {
+                    value: 1000,
+                    message: "Too Many Characters",
+                  },
                 })}
                 className={`resize-none w-full ${
                   !!errors.message ? "border-error" : ""

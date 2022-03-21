@@ -50,7 +50,7 @@ const About: FC = () => {
           <div className="max-w-lg w-full  px-8 " style={{ minHeight: 200 }}>
             {videoLoading && (
               <div className="absolute left-0 right-0 top-24 z-50 pointer-events-none">
-                <Loading />
+                <Loading classes="text-white" />
               </div>
             )}
             <ReactPlayer
