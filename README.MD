@@ -21,13 +21,13 @@
     npm run dev
 ```
 
-### --Building for production.
+### -- Building for production.
 
 ```bash
     npm run build
 ```
 
-### --Running the production server.
+### -- Running the production server.
 
 ```bash
     npm run start
