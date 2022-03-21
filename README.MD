@@ -3,31 +3,31 @@
 
 ## Available Scripts
 
-### Install Packages.
+### 1-Install Packages.
 
 ```bash
     npm install
 ```
 
-### Running Json Server.
+### 2-Running Json Server.
 
 ```bash
     npm run server
 ```
 
-### Running the development server.
+### 3-Running the development server.
 
 ```bash
     npm run dev
 ```
 
-### Building for production.
+### --Building for production.
 
 ```bash
     npm run build
 ```
 
-### Running the production server.
+### --Running the production server.
 
 ```bash
     npm run start
