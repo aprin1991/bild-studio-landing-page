@@ -167,7 +167,7 @@ const Form: FC = () => {
                 animate={controls}
                 className="absolute z-30 text-sm"
                 style={{
-                  right: 15,
+                  right: 0,
                   bottom: 0,
                   fontSize: "11px",
                   color: mapRemainingToColor(charactersRemaining),
